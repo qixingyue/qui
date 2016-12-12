@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>基于docker技术的安全众测平台,跳转中...</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap/js/jquery-1.10.2.min.js"></script>
+    <link href="static/bootstrap/css/message.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container panel panel-default">
+
+      <div class="progress">
+        <div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0 %">
+        </div>
+      </div>
+
+        <div class="row" >
+          <div class="jumptext"><b id="second">5</b>&nbsp;秒后跳转</div>
+        </div>
+
+        <div class="row">
+          <div class="message">{{handler.message}}<div>
+        </div>
+
+        <div class="row" style="margin-top:20px;">
+          <button style="margin-left:40px;" type="button" class="btn btn-success" id="jump">立即跳转</button>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+<script type='text/javascript'>
+
+var total = 5 * 20;
+var tmp_total = total;
+
+setInterval(function(){
+  var tmp = tmp_total--; 
+  var s = Math.round(tmp_total / 20);
+  $("#second").html(s);
+  if(tmp == 0 ){
+    window.location.href="index.html";
+  }
+  var percent = Math.round( (total - tmp )/ total * 10000) / 100.00 + "%"
+  $("#bar").attr("style","width:" + percent );
+},50);
+
+$("#jump").click(function(){
+    window.location.href="index.html";
+});
+
+</script>
+
+  </body>
+</html>

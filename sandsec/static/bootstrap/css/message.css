@@ -1,0 +1,27 @@
+body {
+  background-color:rgb(221,240,237); 
+}
+
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width:400px;
+  height:200px;
+  margin-left:-200px;
+  margin-top:-100px;
+}
+
+.jumptext{
+  margin:0 auto;
+  width:150px;
+  font-size:20px;
+}
+.message{
+  padding:20px;
+  height:60px;
+}
+.progress{
+  margin-top:15px;
+}
+
