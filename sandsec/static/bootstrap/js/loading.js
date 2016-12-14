@@ -1,3 +1,6 @@
+/* 
+ *  fork from http://carlosbonetti.github.io/jquery-loading/  
+ */
 (function(factory) {
   // UMD export
   if (typeof define === 'function' && define.amd) {
