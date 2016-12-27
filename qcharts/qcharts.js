@@ -129,15 +129,15 @@ Qcharts.bindMethod("createLineBar",function(id,data,showOptions,type){
 });
 
 
-Qcharts.bindMethod("createLine",function(id,data,showOptions,type){
+Qcharts.bindMethod("createLine",function(id,data,showOptions){
   this.createLineBar(id,data,showOptions,"line");
 });
 
-Qcharts.bindMethod("createBar",function(id,data,showOptions,type){
+Qcharts.bindMethod("createBar",function(id,data,showOptions){
   this.createLineBar(id,data,showOptions,"bar");
 });
 
-Qcharts.bindMethod("createScatter",function(id,data,showOptions,type){
+Qcharts.bindMethod("createScatter",function(id,data,showOptions){
   this.createLineBar(id,data,showOptions,"scatter");
 });
 
@@ -184,5 +184,50 @@ Qcharts.bindMethod("createPie",function(id,data,showOptions,type){
 
    this.wrapper(id,options);
 
+});
+
+Qcharts.bindMethod("createDash",function(id,data){
+
+  data = data || {};
+
+  var min = data.min || 0;
+  var max = data.max || 200;
+  var value = data.value || 20;
+  var valueName = data.valueName || "Value";
+
+  var options = {
+    tooltip : {
+      //"{a} <br/>{b} : {c}%"
+      formatter: function(params){
+        var dashName = params.seriesName;
+        var valueName = params.data.name;
+        var value = params.data.value;
+        return  valueName + ":" + value ;
+      }
+    },
+    toolbox: {
+      feature: {
+        restore: {},
+        saveAsImage: {}
+      }
+    },
+    series: [
+    {
+      name: "Dash",
+      type: 'gauge',
+      detail: {
+        formatter:function(value){
+          return Math.floor(value / max * 100 ) + "%";
+        }
+      },
+      data: [
+        {value: value , name: valueName}
+      ],
+      min:min,
+      max:max
+    }
+    ]
+  };
+  this.wrapper(id,options);
 });
 
