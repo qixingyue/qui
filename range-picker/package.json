@@ -1,0 +1,29 @@
+{
+  "name": "range-picker",
+  "version": "1.0.0",
+  "description": "simple range picker",
+  "main": "dist/js/range_picker.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.oschina.net:syjefbz/range-picker.git"
+  },
+  "keywords": [
+    "range",
+    "picker"
+  ],
+  "author": "zhang",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-mocha": "^0.4.15",
+    "jshint-stylish": "^2.1.0"
+  }
+}

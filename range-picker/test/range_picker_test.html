@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>RangePicker test</title>
+        <link rel="stylesheet" href="../bower_components/mocha/mocha.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="../css/range-picker.css" type="text/css" charset="utf-8" />
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <div id="range_picker_container" style="width: 400px;">
+            <div id="range_picker"></div>
+        </div>
+        <!-- mocha -->
+        <script src="../bower_components/mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            mocha.setup('bdd');
+        </script>
+        <script src="../bower_components/chai/chai.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            var expect = chai.expect;
+        </script>
+
+        <!-- SinonJS -->
+        <script src="../bower_components/sinonjs/sinon.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- JQuery -->
+        <script src="../bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../bower_components/jquery-simulate-ext/libs/jquery.simulate.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../bower_components/jquery-simulate-ext/src/jquery.simulate.ext.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../bower_components/jquery-simulate-ext/src/jquery.simulate.drag-n-drop.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <!-- RangePicker -->
+        <script src="../src/range_picker.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- 测试脚本 -->
+        <script src="./spec/rangepickerSpec.js" type="text/javascript" charset="utf-8"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+                mocha .run();
+            }
+        </script>
+    </body>
+</html>
